@@ -19,7 +19,7 @@ Para testar esse site localmente, você pode usar:
 1. Instale o [XAMPP](https://www.apachefriends.org/pt_br/index.html).
 2. Copie todos os arquivos para a pasta `htdocs`.
 3. Inicie o Apache.
-4. Acesse `http://localhost/meu-site-php/index.php` no navegador.
+4. Acesse localhost no navegador.
 
 ## ✨ Autor
 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: lightpink;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .InputContainer {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, rgb(227, 213, 255), rgb(255, 231, 231));
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+        }
+
+        .input {
+            width: 90%;
+            height: 40px;
+            border: none;
+            outline: none;
+            caret-color: rgb(255, 81, 0);
+            background-color: rgb(255, 255, 255);
+            border-radius: 30px;
+            padding-left: 15px;
+            letter-spacing: 0.8px;
+            color: rgb(19, 19, 19);
+            font-size: 13.4px;
+        }
+
+        button {
+            appearance: none;
+            background-color: transparent;
+            border: 0.125em solid #1A1A1A;
+            border-radius: 0.9375em;
+            color: #3B3B3B;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 1em 2.3em;
+            text-align: center;
+            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        }
+
+        button:hover {
+            color: #fff;
+            background-color: #1A1A1A;
+            box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            box-shadow: none;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 480px) {
+            .input {
+                font-size: 12px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 0.8em 1.8em;
+            }
+        }
+
+        .imagem-direita {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: auto;
+        }
+
+        @media (max-width: 600px) {
+            .imagem-direita {
+                width: 60px;
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="welcome.php" method="post">
+        <div class="InputContainer">
+            <input type="text" class="input" name="nome" placeholder="Digite seu nome" required>
+        </div>
+
+        <div class="InputContainer">
+            <input type="text" class="input" name="jogo" placeholder="Digite seu jogo favorito" required>
+        </div>
+
+        <div class="InputContainer">
+            <input type="int" class="input" name="idade" placeholder="Digite sua idade" required min="0">
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <img src="princesa.png" alt="Foto" class="imagem-direita">
+
+</body>
+
+</html>

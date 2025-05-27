@@ -67,18 +67,26 @@
     <div class="container">
         <h1>Suas Informações</h1>
         <?php
-            $nomeUser = $_POST["nome"];
-            $jogoUser = $_POST["jogo"];
-            $idadeUser = $_POST["idade"];
+            if($_SERVER ["REQUEST_METHOD"] == "POST"){
 
-            echo "<p>Olá <strong>$nomeUser</strong>, seu jogo favorito é <strong>$jogoUser</strong>.</p>";
+                    $nomeUser = $_POST["nome"];
+                    $jogoUser = $_POST["jogo"];
+                    $idadeUser = $_POST["idade"];
+                
+                if(empty($nomeUser) || empty($jogoUser) || empty($idadeUser)){
+                    echo"<p>Preencha todas as informações</p>";
+                }else{
 
-            if ($idadeUser > 21) {
-                echo "<p>Você tem <strong>mais de 21 anos</strong>.</p>";
-            }else if ($idadeUser = 21) {
-                echo "<p>Você tem <strong>21 anos</strong>.</p>";
-            }else {
-                echo "<p>Você tem <strong>menos de 21 anos</strong>.</p>";
+                    echo "<p>Olá <strong>$nomeUser</strong>, seu jogo favorito é <strong>$jogoUser</strong>.</p>";
+
+                    if ($idadeUser > 21) {
+                        echo "<p>Você tem <strong>mais de 21 anos</strong>.</p>";
+                    }else if ($idadeUser = 21) {
+                        echo "<p>Você tem <strong>21 anos</strong>.</p>";
+                    }else {
+                        echo "<p>Você tem <strong>menos de 21 anos</strong>.</p>";
+                    }   
+                }
             }
         ?>
     </div>
